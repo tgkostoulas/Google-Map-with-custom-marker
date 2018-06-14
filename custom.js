@@ -38,3 +38,25 @@ $(window).scroll(function() {
 });
 }
 </script>
+
+
+<!--Fix-anchor-offset-->
+
+
+$j(document).on('click', '.tabs-noumero-ena a', function(event){
+		event.preventDefault();
+
+		$j('html, body').animate({
+			scrollTop: $j( $j.attr(this, 'href') ).offset().top + -200
+		}, 50);
+	});
+
+$j(document).on('click', '.tabs-noumero-dio a', function(event){
+		event.preventDefault();
+
+		$j('html, body').animate({
+			scrollTop: $j( $j.attr(this, 'href') ).offset().top + -200
+		}, 50);
+	});
+
+
