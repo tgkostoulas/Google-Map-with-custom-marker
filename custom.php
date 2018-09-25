@@ -66,6 +66,11 @@ function bbloomer_change_number_related_products( $args ) {
 }
 
 
+// Get product price (woocommerce)
+
+$thprice = get_post_meta( get_the_ID(), '_regular_price', true);
+
+
 // Custom text for products in stock (theme: The7)
 
 add_action( 'woocommerce_before_add_to_cart_button', 'custom_text_overide', 5 );
