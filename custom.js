@@ -70,3 +70,16 @@ jQuery(document).ready(function(){
 	'event_label': 'label name'});
   });
 });
+
+<!--Ga Tracking and click event-->
+	
+jQuery(document).ready(function(){
+    
+ jQuery("Class or ID").on("click", function onclick(event) {
+	ga('send', {
+	hitType: 'event',
+	eventCategory: '',
+	eventAction: '',
+	eventLabel: ''});
+  });
+});
