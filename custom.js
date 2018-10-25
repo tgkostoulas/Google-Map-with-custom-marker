@@ -60,3 +60,13 @@ $j(document).on('click', '.tabs-noumero-dio a', function(event){
 	});
 
 
+<!--Gtag Tracking and click event-->
+
+jQuery(document).ready(function(){
+    
+ jQuery("Class or ID").on("click", function onclick(event) {
+	gtag('event', 'click', {
+	'event_category': 'category name',    
+	'event_label': 'label name'});
+  });
+});
