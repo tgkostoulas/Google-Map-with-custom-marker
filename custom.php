@@ -1,9 +1,9 @@
 // Display attributes in custom position 
 
-<?php $selides = $product->get_attribute('pa_selides'); 
+<?php $example = $product->get_attribute('attribute_1'); 
 
-if( ! empty( $selides ) ){
-	echo '<span class="product-max-pages">Μέγ. αριθμός σελίδων εκτύπωσης: ' . $selides . '</span>';
+if( ! empty( $example ) ){
+	echo $example;
 }
 
 ?>
