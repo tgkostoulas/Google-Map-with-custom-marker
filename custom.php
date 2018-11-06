@@ -103,3 +103,39 @@ function remove_hyphens($a) {
     $a = str_replace('-', '', $a);
     return $a;
 }
+
+
+// Cookiebot with ga
+
+if (isset($_COOKIE["CookieConsent"])){
+
+	add_action( 'wp_head', function () { ?>
+	
+		<script>
+		if (typeof ga === 'undefined') {
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-00000000-0', 'auto');
+		  ga('send', 'pageview');}
+		</script> 
+	
+	<?php }); //end add action
+} //end if
+
+// Cookiebot with gtag
+
+if (isset($_COOKIE["CookieConsent"])){
+    add_action( 'wp_head', function () { ?>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-00000000-00"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-00000000-00');
+        </script>
+    <?php }); //end add action
+} //end if
