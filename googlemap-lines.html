@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Circles</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+<div id="map"></div>
+<script>
+    // This example converts a polyline to a dashed line, by
+    // setting the opacity of the polyline to 0, and drawing an opaque symbol
+    // at a regular interval on the polyline.
+
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 7,
+            center: {
+                lat: 38.4823868,
+                lng: 22.500969899999973
+            },
+            mapTypeId: 'terrain'
+        });
+
+        var meteora = new google.maps.LatLng(39.7217085, 21.6284009);
+        var marker = new google.maps.Marker({
+            position: meteora,
+            map: map
+        });
+
+        var delphi = new google.maps.LatLng(38.4823868, 22.500969899999973);
+        var marker = new google.maps.Marker({
+            position: delphi,
+            map: map
+        });
+
+        var epidauros = new google.maps.LatLng(37.6265726, 23.132243700000004);
+        var marker = new google.maps.Marker({
+            position: epidauros,
+            map: map
+        });
+
+        var olympia = new google.maps.LatLng(37.6384588, 21.62987959999998);
+        var marker = new google.maps.Marker({
+            position: olympia,
+            map: map
+        });
+
+
+        // Define a symbol using SVG path notation, with an opacity of 1.
+        var lineSymbol = {
+            path: 'M 0,-1 0,1',
+            strokeOpacity: 1,
+            scale: 4
+        };
+
+        // Create the polyline, passing the symbol in the 'icons' property.
+        // Give the line an opacity of 0.
+        // Repeat the symbol at intervals of 20 pixels to create the dashed effect.
+
+
+        var line = new google.maps.Polyline({
+            path: [{
+                lat: 39.7217085,
+                lng: 21.6284009
+            }, {
+                lat: 38.4823868,
+                lng: 22.500969899999973
+            }],
+            strokeOpacity: 0,
+            icons: [{
+                icon: lineSymbol,
+                offset: '0',
+                repeat: '20px'
+            }],
+            map: map
+        });
+
+        var line = new google.maps.Polyline({
+            path: [{
+                lat: 38.4823868,
+                lng: 22.500969899999973
+            }, {
+                lat: 37.6265726,
+                lng: 23.132243700000004
+            }],
+            strokeOpacity: 0,
+            icons: [{
+                icon: lineSymbol,
+                offset: '0',
+                repeat: '20px'
+            }],
+            map: map
+        });
+
+        var line = new google.maps.Polyline({
+            path: [{
+                lat: 37.6265726,
+                lng: 23.132243700000004
+            }, {
+                lat: 37.6384588,
+                lng: 21.62987959999998
+            }],
+            strokeOpacity: 0,
+            icons: [{
+                icon: lineSymbol,
+                offset: '0',
+                repeat: '20px'
+            }],
+            map: map
+        });
+
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMBevAlkA-wPEADZ9Ftgd7M4e2KEphJD8&callback=initMap">
+</script>
+  </body>
+</html>
