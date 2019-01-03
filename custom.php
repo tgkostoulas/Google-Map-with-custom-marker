@@ -1,12 +1,13 @@
+<?php
+
 // Display attributes in custom position 
 
-<?php $example = $product->get_attribute('attribute_1'); 
+$example = $product->get_attribute('attribute_1'); 
 
 if( ! empty( $example ) ){
 	echo $example;
 }
 
-?>
 
 
 // Get product category and add it to array $allcatsarray
