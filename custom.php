@@ -139,3 +139,16 @@ if (isset($_COOKIE["CookieConsent"])){
         </script>
     <?php }); //end add action
 } //end if
+
+
+// Language Check
+
+if(ICL_LANGUAGE_CODE=='en') {
+	echo do_shortcode('[contact-form-7 id="" title=""]');
+} elseif(ICL_LANGUAGE_CODE=='ro') {
+	echo do_shortcode('[contact-form-7 id="" title=""]');
+} elseif(ICL_LANGUAGE_CODE=='el') {
+	echo do_shortcode('[contact-form-7 id="" title=""]');
+} elseif(ICL_LANGUAGE_CODE=='de') {
+	echo do_shortcode('[contact-form-7 id="" title=""]');
+}
