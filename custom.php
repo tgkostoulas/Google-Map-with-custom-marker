@@ -157,7 +157,46 @@ if(ICL_LANGUAGE_CODE=='en') {
 }
 
 
-// Posts with multiple categories display custom field gc_content_for_sidebar for child category
+// Posts with multiple categories display custom field gc_content_for_sidebar from child category not parent category
+// example
+// Run for last key [example=>1]
+
+Array
+
+(
+    [0] => WP_Term Object
+
+        (
+            [term_id] => 96
+            [name] => test
+            [slug] => test
+            [term_group] => 0
+            [term_taxonomy_id] => 96
+            [taxonomy] => category
+            [description] => 
+            [parent] => 0
+            [count] => 1
+            [filter] => raw
+            [term_order] => 0
+        )
+
+    [1] => WP_Term Object
+
+        (
+            [term_id] => 97
+            [name] => test2
+            [slug] => test2
+            [term_group] => 0
+            [term_taxonomy_id] => 97
+            [taxonomy] => category
+            [description] => 
+            [parent] => 96
+            [count] => 1
+            [filter] => raw
+            [term_order] => 0
+        )
+)
+
 
 $th_terms_array_last_key = end(array_keys($terms));
 
