@@ -97,6 +97,7 @@ add_action( 'woocommerce_before_add_to_cart_button', 'custom_text_overide', 5 );
           }
   }
 
+
 // Relevansi remove "-" from search query
 
 add_filter('relevanssi_remove_punctuation', 'remove_hyphens', 9);
@@ -126,6 +127,7 @@ if (isset($_COOKIE["CookieConsent"])){
 	<?php }); //end add action
 } //end if
 
+
 // Cookiebot with gtag
 
 if (isset($_COOKIE["CookieConsent"])){
@@ -142,7 +144,7 @@ if (isset($_COOKIE["CookieConsent"])){
 } //end if
 
 
-// Language Check
+// Language Check WPML
 
 if(ICL_LANGUAGE_CODE=='en') {
 	echo do_shortcode('[contact-form-7 id="" title=""]');
@@ -152,4 +154,28 @@ if(ICL_LANGUAGE_CODE=='en') {
 	echo do_shortcode('[contact-form-7 id="" title=""]');
 } elseif(ICL_LANGUAGE_CODE=='de') {
 	echo do_shortcode('[contact-form-7 id="" title=""]');
+}
+
+
+// Posts with multiple categories display custom field gc_content_for_sidebar for child category
+
+$th_terms_array_last_key = end(array_keys($terms));
+
+if(!empty($terms)){
+
+  foreach ($terms as $key => $value) {
+
+    if ($key == $th_terms_array_last_key) {
+      $term_id=$value->term_id;
+      $th_parent_id=$value->parent;                  
+
+      if (!empty ($term_id)) {
+
+	$gc_content_for_sidebar =  get_field('gc_content_for_sidebar', $taxonomy.'_'.$term_id);
+	if($gc_content_for_sidebar){echo $gc_content_for_sidebar; }
+
+      }
+      break;
+    }
+  }
 }
