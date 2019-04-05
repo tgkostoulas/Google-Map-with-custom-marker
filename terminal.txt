@@ -1,0 +1,11 @@
+cp filename /path/file => copy file
+
+cat filename | more => limit file lines
+
+tail -f 10 filename => last 10 lines
+
+chown [OPTIONS] USER[:GROUP] FILE(s) => change permisions
+
+TAB => autocomplete
+
+ls -la => beautify ls 
