@@ -83,3 +83,17 @@ jQuery(document).ready(function(){
 	eventLabel: ''});
   });
 });
+
+
+<!-- Open Accordion tabs from different html elements (with delay)
+https://www.w3schools.com/bootstrap/bootstrap_collapse.asp-->
+
+jQuery(document).ready(function () {
+    setTimeout(function () {
+	    
+        jQuery('path[data-shape-title="Greece"]').attr("data-toggle", "collapse");
+        jQuery('path[data-shape-title="Greece"]').attr("data-target", "#collapseThree");
+
+    }, 5000);
+
+}); 
