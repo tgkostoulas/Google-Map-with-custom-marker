@@ -1,0 +1,4 @@
+// Find and Replace
+
+update TABLE_NAME set FIELD_NAME =
+replace(FIELD_NAME, 'Text to find', 'text to replace with');
