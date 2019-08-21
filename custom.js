@@ -97,3 +97,53 @@ jQuery(document).ready(function () {
     }, 5000);
 
 }); 
+
+
+
+<!--Finds 'SOME TEXT'-->
+if ($(".breadcrumb li:nth-child(2) a span").text() == "SOME TEXT") {
+	
+	<!--Checks if 'price' is empty-->
+	if ($(".list-unstyled.price meta[itemprop='price']").length) {
+		
+		<!--Checks if 'content' is empty-->
+		if ($(".list-unstyled.price meta[content='0.00']").length) {
+		
+			$('.product-price').addClass('th-hide-product-price');
+			$('.product-price').after('<h2 class="th-title-replace-price">some text</h2>');
+		
+		}
+	}	
+}
+
+
+$( document).ready(function() {
+	
+	<!--Finds 'SOME TEXT'-->
+	if ($(".breadcrumb li:nth-child(2) a span").text() == "SOME TEXT") {
+		
+		<!--Checks if 'price' is empty-->
+		if ($(".list-unstyled.price meta[itemprop='price']").length) {
+	
+			<!--Checks if 'content' is empty-->
+			if ($(".list-unstyled.price meta[content='0.00']").length) {
+	
+				<!--Finds the tetxt of x element-->
+				$('.button.enquiry-button').text(function () { 
+				
+					<!--Replace 'Some Text' with 'More Text'-->
+					return $(this).text().replace('Some Text', 'More Text'); 
+				
+				});
+			}
+		}	
+	}		
+});
+
+
+$( document).ready(function() {
+
+	<!--Hide element if text equals "0,00€" after trim-->
+	$(".product-details p.price").filter(function() { return $.trim($(this).text()) === "0,00€"; }).css("display", "none");
+	
+});
