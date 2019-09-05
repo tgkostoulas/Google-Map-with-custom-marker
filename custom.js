@@ -147,3 +147,15 @@ $( document).ready(function() {
 	$(".product-details p.price").filter(function() { return $.trim($(this).text()) === "0,00€"; }).css("display", "none");
 	
 });
+
+
+
+<!-- If user clicks outside selected div do something -->
+
+$(document).ready(function () {
+    $(document).on("click", function (e) {
+        if ($(e.target).is(".CLASS") === false) {
+		<!--DO SOMETHING-->
+        }
+    });
+});
