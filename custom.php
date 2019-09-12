@@ -223,8 +223,14 @@ if(!empty($terms)){
 //WordPress NEW shortcode
 // functions.php
 
-function th_home_projects_display() {
+function th_home_projects_display() {	
 	
+	ob_start();
+	
+	// do stuff
+	
+	return ob_get_clean();
+
 }
 
 add_shortcode( 'th_home_projects_display', 'th_home_projects' );
