@@ -218,3 +218,13 @@ if(!empty($terms)){
     }
   }
 }
+
+
+//WordPress NEW shortcode
+// functions.php
+
+function th_home_projects_display() {
+	
+}
+
+add_shortcode( 'th_home_projects_display', 'th_home_projects' );
