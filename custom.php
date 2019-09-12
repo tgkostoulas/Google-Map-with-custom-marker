@@ -234,3 +234,15 @@ function th_home_projects_display() {
 }
 
 add_shortcode( 'th_home_projects_display', 'th_home_projects' );
+
+//Advanced Custom Fields
+//Create date format
+
+$field = 20190101
+	
+echo DateTime::createFromFormat('Ymd', $field);	
+
+Y = 2019
+m = 01
+d = 01
+	
