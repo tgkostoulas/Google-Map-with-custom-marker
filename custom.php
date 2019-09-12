@@ -233,7 +233,7 @@ function th_home_projects_display() {
 
 }
 
-add_shortcode( 'th_home_projects_display', 'th_home_projects' );
+add_shortcode( 'th_projects_display', 'th_home_projects_display' );
 
 //Advanced Custom Fields
 //Create date format
