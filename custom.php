@@ -246,3 +246,16 @@ Y = 2019
 m = 01
 d = 01
 	
+	
+//Sort array by x field in it
+	
+function sortBydate($a, $b) {
+	return strcasecmp($a['x'], $b['x']);
+}
+
+usort($th_products_array, 'sortBydate');
+	
+
+// strtotime doesnt work with '/'
+
+strtotime(str_replace('/', '-', ($th_project_date_three)))
