@@ -259,3 +259,31 @@ usort($th_products_array, 'sortBydate');
 // strtotime doesnt work with '/'
 
 strtotime(str_replace('/', '-', ($th_project_date_three)))
+	
+	
+// Query multiple post types and diferent category's
+	
+$th_post_types = array ('post_type_1', 'post_type_2');
+
+$argsynenteykseis = array( 
+  'post_type'=> $th_post_types_synenteukseis,
+  'posts_per_page'=>12,
+  'orderby'=>'rand',
+  'tax_query' => array(
+    'relation' => 'OR',
+    array(
+        'taxonomy' => 'post_category_1',
+        'field' => 'term_id',
+        'terms' => '68'
+      ),
+    array(
+        'taxonomy' => 'post_category_2',
+        'field' => 'term_id',
+        'terms' => '102'
+      ),
+  )
+);
+
+$loopargs = new WP_Query( $args );
+
+
