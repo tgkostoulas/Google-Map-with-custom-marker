@@ -39,6 +39,39 @@ $(window).scroll(function() {
 }
 </script>
 
+<!--NEW VERSION===STICKY ELEMENT-->
+
+    function sticky_relocate() {
+	var window_top = $(window).scrollTop();
+	var footer_top = $("#footer").offset().top;
+	var div_top = $('#sticky-anchor').offset().top;
+	var div_height = $(".quform-outer.quform-theme-light-light").height();
+
+	var padding = 70;  // tweak here or get from margins etc
+
+	if (window_top + div_height > footer_top - padding)
+	    $('.quform-outer.quform-theme-light-light').css({top: (window_top + div_height - footer_top + padding) * -1})
+	else if (window_top > div_top) {
+	    $('.quform-outer.quform-theme-light-light').addClass('sticky');
+	    $('.quform-outer.quform-theme-light-light').css({top: 0})
+	} else {
+	    $('.quform-outer.quform-theme-light-light').removeClass('sticky');
+	}
+    }
+
+    if ($(window).width() >= 1076) {
+	$(function () {
+	    $(window).scroll(sticky_relocate);
+	    sticky_relocate();
+	});
+    }    
+
+<style>
+.sticky { position: fixed; top: 0; z-index: 10; border-radius: 0 0 0.5em 0.5em; width: calc(33vw - 45px);          
+</style>
+	
+
+
 
 <!--Fix-anchor-offset-->
 
