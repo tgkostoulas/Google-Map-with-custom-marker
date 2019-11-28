@@ -159,3 +159,34 @@ $(document).ready(function () {
         }
     });
 });
+	
+<!-- Gtag events when user clicks link with tel or mailto -->	
+
+$("[href*='tel:'], [href*='mailto:']").click(function(e) {
+
+  e.preventDefault();
+  var href = $(this).attr('href');
+
+  // tel:
+  if (href.toLowerCase().indexOf("tel:") >= 0) {
+    eventCategory = 'Call';
+    eventLabel = href.replace('tel:', '');
+
+  }
+
+  // mailto:
+  if (href.toLowerCase().indexOf("mailto:") >= 0) {
+    eventCategory = 'Email';
+    eventLabel = href.replace('mailto:', '');
+  }
+
+  gtag('event', 'Click', {
+    'event_category': eventCategory,
+    'event_label': eventLabel
+  });
+
+  setTimeout(function() {
+    window.location = href;
+  }, 500);
+
+});
