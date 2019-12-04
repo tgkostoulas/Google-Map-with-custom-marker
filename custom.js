@@ -223,3 +223,13 @@ $("[href*='tel:'], [href*='mailto:']").click(function(e) {
   }, 500);
 
 });
+
+<!-- Contact form 7 on mailsent do something -->		
+
+jQuery( document).ready(function() {    
+    document.addEventListener( 'wpcf7mailsent', function( event ) {
+    
+       
+       gtag_report_conversion(url);
+    }, false );
+});    
