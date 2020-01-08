@@ -9,3 +9,7 @@ chown [OPTIONS] USER[:GROUP] FILE(s) => change permisions
 TAB => autocomplete
 
 ls -la => beautify ls 
+
+
+// wget with server ip
+wget http://11.22.33.44/backup.zip --header 'Host: example.com'
