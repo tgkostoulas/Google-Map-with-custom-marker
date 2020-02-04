@@ -233,3 +233,23 @@ jQuery( document).ready(function() {
        gtag_report_conversion(url);
     }, false );
 });    
+
+	
+<!-- Add class to div when clicked, remove from other divs -->
+	
+<div class="main">	
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</div>
+	
+jQuery('.main div').on("click", function() { 
+	jQuery('.main div').each(function() {
+		if(jQuery(this).hasClass('clicked')) {
+			jQuery(this).removeClass('clicked');
+		} 
+		});
+   	jQuery(this).addClass('clicked');
+});	
+	
