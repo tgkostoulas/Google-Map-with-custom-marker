@@ -253,3 +253,18 @@ jQuery('.main div').on("click", function() {
    	jQuery(this).addClass('clicked');
 });	
 	
+	
+<!-- Run function when changes to DOM are detected -->
+
+// identify an element to observe
+var elementToObserve = document.querySelector("#targetElementId");
+
+// create a new instance of `MutationObserver` named `observer`, 
+// passing it a callback function
+var observer = new MutationObserver(function() {
+    console.log('callback that runs when observer is triggered');
+});
+
+// call `observe` on that MutationObserver instance, 
+// passing it the element to observe, and the options object
+observer.observe(elementToObserve, {subtree: true, childList: true});	
