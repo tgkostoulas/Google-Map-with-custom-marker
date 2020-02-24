@@ -1,4 +1,4 @@
-<!--Calculate where to stop-->
+// Calculate where to stop //
 
 <script>
 var intElemOffsetHeight = document.body.offsetHeight;
@@ -7,7 +7,7 @@ var scrollstop = intElemOffsetHeight - 1600;
 
 </script>
 
-<!--Add Sticky Class-->
+// Add Sticky Class //
 
 <script>
 if($(window).width() >= 1076){
@@ -23,7 +23,7 @@ $(window).scroll(function() {
 }
 </script>
 
-<!--Remove Sticky Class-->
+// Remove Sticky Class //
 
 <script>
 if($(window).width() >= 1076){
@@ -39,7 +39,7 @@ $(window).scroll(function() {
 }
 </script>
 
-<!--NEW VERSION===STICKY ELEMENT-->
+// NEW VERSION===STICKY ELEMENT //
 
     function sticky_relocate() {
 	var window_top = $(window).scrollTop();
@@ -73,7 +73,7 @@ $(window).scroll(function() {
 
 
 
-<!--Fix-anchor-offset-->
+// Fix-anchor-offset //
 
 
 $j(document).on('click', '.tabs-noumero-ena a', function(event){
@@ -93,7 +93,7 @@ $j(document).on('click', '.tabs-noumero-dio a', function(event){
 	});
 
 
-<!--Gtag Tracking and click event-->
+// Gtag Tracking and click event //
 
 jQuery(document).ready(function(){
     
@@ -104,7 +104,7 @@ jQuery(document).ready(function(){
   });
 });
 
-<!--Ga Tracking and click event-->
+// Ga Tracking and click event //
 	
 jQuery(document).ready(function(){
     
@@ -118,8 +118,8 @@ jQuery(document).ready(function(){
 });
 
 
-<!-- Open Accordion tabs from different html elements (with delay)
-https://www.w3schools.com/bootstrap/bootstrap_collapse.asp-->
+// Open Accordion tabs from different html elements (with delay)
+// https://www.w3schools.com/bootstrap/bootstrap_collapse.asp
 
 jQuery(document).ready(function () {
     setTimeout(function () {
@@ -133,13 +133,13 @@ jQuery(document).ready(function () {
 
 
 
-<!--Finds 'SOME TEXT'-->
+// Finds 'SOME TEXT' //
 if ($(".breadcrumb li:nth-child(2) a span").text() == "SOME TEXT") {
 	
-	<!--Checks if 'price' is empty-->
+	// Checks if 'price' is empty //
 	if ($(".list-unstyled.price meta[itemprop='price']").length) {
 		
-		<!--Checks if 'content' is empty-->
+		// Checks if 'content' is empty //
 		if ($(".list-unstyled.price meta[content='0.00']").length) {
 		
 			$('.product-price').addClass('th-hide-product-price');
@@ -152,19 +152,19 @@ if ($(".breadcrumb li:nth-child(2) a span").text() == "SOME TEXT") {
 
 $( document).ready(function() {
 	
-	<!--Finds 'SOME TEXT'-->
+	// Finds 'SOME TEXT' //
 	if ($(".breadcrumb li:nth-child(2) a span").text() == "SOME TEXT") {
 		
-		<!--Checks if 'price' is empty-->
+		// Checks if 'price' is empty //
 		if ($(".list-unstyled.price meta[itemprop='price']").length) {
 	
-			<!--Checks if 'content' is empty-->
+			// Checks if 'content' is empty //
 			if ($(".list-unstyled.price meta[content='0.00']").length) {
 	
-				<!--Finds the tetxt of x element-->
+				// Finds the tetxt of x element //
 				$('.button.enquiry-button').text(function () { 
 				
-					<!--Replace 'Some Text' with 'More Text'-->
+					// Replace 'Some Text' with 'More Text' //
 					return $(this).text().replace('Some Text', 'More Text'); 
 				
 				});
@@ -176,14 +176,14 @@ $( document).ready(function() {
 
 $( document).ready(function() {
 
-	<!--Hide element if text equals "0,00€" after trim-->
+	// Hide element if text equals "0,00€" after trim //
 	$(".product-details p.price").filter(function() { return $.trim($(this).text()) === "0,00€"; }).css("display", "none");
 	
 });
 
 
 
-<!-- If user clicks outside selected div do something -->
+// If user clicks outside selected div do something //
 
 $(document).ready(function () {
     $(document).on("click", function (e) {
@@ -193,7 +193,7 @@ $(document).ready(function () {
     });
 });
 	
-<!-- Gtag events when user clicks link with tel or mailto -->	
+// Gtag events when user clicks link with tel or mailto //
 
 $("[href*='tel:'], [href*='mailto:']").click(function(e) {
 
@@ -224,7 +224,7 @@ $("[href*='tel:'], [href*='mailto:']").click(function(e) {
 
 });
 
-<!-- Contact form 7 on mailsent do something -->		
+// Contact form 7 on mailsent do something //
 
 jQuery( document).ready(function() {    
     document.addEventListener( 'wpcf7mailsent', function( event ) {
@@ -235,7 +235,7 @@ jQuery( document).ready(function() {
 });    
 
 	
-<!-- Add class to div when clicked, remove from other divs -->
+// Add class to div when clicked, remove from other divs //
 	
 <div class="main">	
 	<div></div>
@@ -254,7 +254,7 @@ jQuery('.main div').on("click", function() {
 });	
 	
 	
-<!-- Run function when changes to DOM are detected -->
+// Run function when changes to DOM are detected // 
 
 // identify an element to observe
 var elementToObserve = document.querySelector("#targetElementId");
@@ -268,3 +268,25 @@ var observer = new MutationObserver(function() {
 // call `observe` on that MutationObserver instance, 
 // passing it the element to observe, and the options object
 observer.observe(elementToObserve, {subtree: true, childList: true});	
+
+	
+// GET 2 NUMBERS FROM TEXT, ADD THEM AS NUMBERS, RETURN TOTAL NUMBER
+$( ".pbListing-box.box-productbundles" ).each(function() {
+  
+	var th_total_price = $(this).find(".PB_bundle_info .PB_bundle_total_price").text();
+	var th_total_price_edited = th_total_price.replace("Τιμή Πακέτου: ", "");
+	var th_total_price_edited = th_total_price_edited.replace("€", "");  
+	var th_total_price_edited = th_total_price_edited.replace(",", ".");  
+
+	var th_discount_price = $(this).find(".PB_bundle_info strong:nth-child(3) > span").text();
+	var th_discount_price_edited = th_discount_price.replace("Κερδίζετε ", "");
+	var th_discount_price_edited = th_discount_price_edited.replace("€!", "");  
+	var th_discount_price_edited = th_discount_price_edited.replace(",", ".");  
+
+	var th_total = parseFloat(th_total_price_edited) + parseFloat(th_discount_price_edited);
+
+	$(this).find('.PB_bundle_info strong:nth-child(1)').before(function() {
+		return "<div class='th-starting-price'>Αρχική τιμή " + th_total.toFixed(2) + "€</div>";
+	});
+	  
+});
