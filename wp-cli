@@ -1,0 +1,10 @@
+wp cli info
+wp cli alias --allow-root
+wp cli alias add @test1 --set-path=/home/test1/public_html/ --allow-root
+wp cli alias add @wordpress_sites --grouping=test1,test2 --allow-root
+wp @wordpress_sites plugin deactivate duplicator --allow-root
+
+=====================================================
+
+mkdir .wp-cli
+touch ~/.wp-cli/config.yml --allow-root
