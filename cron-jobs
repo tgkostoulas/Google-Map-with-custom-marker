@@ -1,0 +1,4 @@
+// CRON-JOB to clear WPFC cache
+
+wp-config -> define('WPFC_CLEAR_CACHE_URL_TOKEN', "KYNHDsPdWVa4AwnWCgdX");
+cron jpb -> wget -O - "https://www.test.gr/?action=wpfastestcache&type=clearcacheandminified&token=KYNHDsPdWVa4AwnWCgdX" >/dev/null 2>&1
